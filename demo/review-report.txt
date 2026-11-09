@@ -1,0 +1,21 @@
+helpii · repository cleanup review
+
+3 reported unused files from Knip
+
+KEEP · src/invoiceCsv.ts
+  Review the config reference and update Knip configuration if appropriate.
+  Config reference: deploy.json #scheduledJob
+  Verification: Verify the registration in the deployed environment and smoke-test the scheduled output.
+  requirement · requirements.md:2 · exact line matches
+  requirement · deploy.json:1 · partial match; recheck meaning
+
+NEEDS VERIFICATION · src/oldFormat.ts
+  Rerun Knip on the current repository and check dynamic and external callers before deciding.
+  Verification: Compare the build and relevant tests before and after a proposed removal.
+
+NEEDS VERIFICATION · src/reminder.ts
+  Rerun Knip on the current repository and check dynamic and external callers before deciding.
+  Verification: Compare the build and relevant tests before and after a proposed removal.
+  requirement · requirements.md:3 · exact line matches
+  requirement · src/reminder.ts:1 · partial match; recheck meaning
+

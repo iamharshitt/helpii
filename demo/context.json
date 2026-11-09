@@ -1,0 +1,25 @@
+{
+  "records": [
+    {
+      "file": "src/invoiceCsv.ts",
+      "kind": "entry-point",
+      "confirmed": true,
+      "reason": "The deployment config registers this file as a scheduled job.",
+      "evidence": [{"path":"deploy.json","line":1,"contains":"src/invoiceCsv.ts"}]
+    },
+    {
+      "file": "src/invoiceCsv.ts",
+      "kind": "requirement",
+      "confirmed": true,
+      "reason": "Finance still needs this export.",
+      "evidence": [{"path":"requirements.md","line":2,"contains":"scheduled CSV export through quarter-end"}]
+    },
+    {
+      "file": "src/reminder.ts",
+      "kind": "requirement",
+      "confirmed": true,
+      "reason": "This file appears related to invoice reminders, but the caller is unknown.",
+      "evidence": [{"path":"requirements.md","line":3,"contains":"must receive a reminder"}]
+    }
+  ]
+}

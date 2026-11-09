@@ -1,0 +1,70 @@
+[
+  {
+    "file": "src/invoiceCsv.ts",
+    "status": "keep",
+    "action": "Review the config reference and update Knip configuration if appropriate.",
+    "records": [
+      {
+        "kind": "requirement",
+        "confirmed": false,
+        "evidence": [
+          {
+            "path": "requirements.md",
+            "line": 2,
+            "matches": true,
+            "exactLine": true
+          },
+          {
+            "path": "deploy.json",
+            "line": 1,
+            "matches": true,
+            "exactLine": false
+          }
+        ]
+      }
+    ],
+    "configReferences": [
+      {
+        "file": "src/invoiceCsv.ts",
+        "source": "deploy.json",
+        "key": "scheduledJob"
+      }
+    ],
+    "verification": "Verify the registration in the deployed environment and smoke-test the scheduled output."
+  },
+  {
+    "file": "src/oldFormat.ts",
+    "status": "needs verification",
+    "action": "Rerun Knip on the current repository and check dynamic and external callers before deciding.",
+    "records": [],
+    "configReferences": [],
+    "verification": "Compare the build and relevant tests before and after a proposed removal."
+  },
+  {
+    "file": "src/reminder.ts",
+    "status": "needs verification",
+    "action": "Rerun Knip on the current repository and check dynamic and external callers before deciding.",
+    "records": [
+      {
+        "kind": "requirement",
+        "confirmed": false,
+        "evidence": [
+          {
+            "path": "requirements.md",
+            "line": 3,
+            "matches": true,
+            "exactLine": true
+          },
+          {
+            "path": "src/reminder.ts",
+            "line": 1,
+            "matches": true,
+            "exactLine": false
+          }
+        ]
+      }
+    ],
+    "configReferences": [],
+    "verification": "Compare the build and relevant tests before and after a proposed removal."
+  }
+]

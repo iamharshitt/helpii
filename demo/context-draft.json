@@ -1,0 +1,24 @@
+{
+  "records": [
+    {
+      "file": "src/invoiceCsv.ts",
+      "kind": "requirement",
+      "confirmed": false,
+      "reason": "The finance requirement calls for a scheduled CSV export. The deployment manifest points its scheduledJob field to this file.",
+      "evidence": [
+        {"path": "requirements.md", "line": 2, "contains": "Finance needs the scheduled CSV export through quarter-end."},
+        {"path": "deploy.json", "line": 1, "contains": "\"scheduledJob\":\"src/invoiceCsv.ts\""}
+      ]
+    },
+    {
+      "file": "src/reminder.ts",
+      "kind": "requirement",
+      "confirmed": false,
+      "reason": "The requirement calls for overdue invoice reminders. The symbol name suggests a connection, but the sample provides no caller or registration.",
+      "evidence": [
+        {"path": "requirements.md", "line": 3, "contains": "Accounts with overdue invoices must receive a reminder."},
+        {"path": "src/reminder.ts", "line": 1, "contains": "export const sendReminder"}
+      ]
+    }
+  ]
+}
